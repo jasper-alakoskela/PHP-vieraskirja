@@ -1,11 +1,11 @@
-let nValue = document.getElementById("name").value;
-let eValue = document.getElementById("email").value;
+let guestName = document.getElementById("name");
+let guestEmail = document.getElementById("email");
 
 function validate() {
-    if (nValue == null || nValue == "") {
+    if (guestName.value == null || guestName.value == "") {
         alert("Nimi puuttuu!")
     }
-    if (eValue == null || eValue == "") {
+    if (guestEmail.value == null || guestEmail.value == "") {
         alert("Sähköposti puuttuu!")
     }
 }
