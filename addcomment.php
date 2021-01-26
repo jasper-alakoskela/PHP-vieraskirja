@@ -26,6 +26,7 @@
         include("comments.html"); 
     }
 ?>
+<script src="app.js"></script>
 </body>
 </html>
 

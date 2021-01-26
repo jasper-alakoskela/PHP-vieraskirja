@@ -11,7 +11,7 @@
 <body>
     <h1>Vieraskirja</h1>
 
-    <form action="addcomment.php" method="POST">
+    <form action="addcomment.php" method="POST" onsubmit="return validate(this);">
         <label for="name">Nimi</label>
         <br><br>
         <input type="text" name="name" id="name">
@@ -24,7 +24,7 @@
         <br><br>
         <textarea name="message" id="message" cols="40" rows="7" id="message"></textarea>
         <br>
-        <button onclick="validate()">Tallenna</button>
+        <input type="submit" value="Tallenna">
     </form>
 
     <script src="app.js"></script>
