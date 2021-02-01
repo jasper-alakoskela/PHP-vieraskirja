@@ -11,7 +11,7 @@
 
 <?php
     if(isset($_POST["name"]) || isset($_POST["email"]) || isset($_POST["message"])){
-        $myfile = fopen("comments.html", "a") or die ("Error");
+        $myfile = fopen("comments.php", "a") or die ("Error");
         $namefile = "<hr/>" . $_POST["name"]. "<br/>";
         $emailfile = $_POST["email"]. "<br/><br/>";
         $messagefile = $_POST["message"]. "<br/><hr/>";
@@ -20,10 +20,10 @@
         fwrite ($myfile, $messagefile);
         fclose($myfile);
 
-        include("comments.html");
+        include("comments.php");
     }
     else {
-        include("comments.html"); 
+        include("comments.php"); 
     }
 ?>
 <script src="app.js"></script>

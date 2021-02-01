@@ -26,7 +26,17 @@
         <br>
         <input type="submit" value="Tallenna">
     </form>
-
+        <br><br>
+    <div>
+        <h2>Hallintapaneeli</h2>
+            <form action="validation.php" method="POST">
+                <input placeholder="Salasana" type="password" name="password">
+                <input type="submit" value="Kirjaudu">
+                <?php if(isset($password_error)){?>
+                    <p><?php echo $password_error ?></p>
+                    <?php } ?>  
+            </form>
+        </div>
     <script src="app.js"></script>
 </body>
 
