@@ -1,7 +1,8 @@
 let guestName = document.getElementById("name");
 let guestEmail = document.getElementById("email");
+let passWord = document.getElementById("password");
 
-function validate(form) {
+function validateMessage(form) {
     if (guestName.value == null || guestName.value == "") {
         alert("Nimi puuttuu!");
         form.name.focus();
@@ -11,6 +12,20 @@ function validate(form) {
     if (guestEmail.value == null || guestEmail.value == "") {
         alert("Sähköposti puuttuu!");
         form.email.focus();
+        return false;
+    }
+}
+
+function validatePassword(form) {
+    if (passWord.value == null || passWord.value == "") {
+        alert("Salasana puuttuu!");
+        form.password.focus();
+        return false;
+    }
+
+    if (passWord.value != 0000) {
+        alert("Väärä salasana!");
+        form.password.focus();
         return false;
     }
 }
