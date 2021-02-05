@@ -12,12 +12,14 @@
 <?php
     if(isset($_POST["name"]) || isset($_POST["email"]) || isset($_POST["message"])){
         $myfile = fopen("comments.php", "a") or die ("Error");
-        $namefile = "<hr/>" . $_POST["name"]. "<br/>";
+        $namefile = "<div id='parent'> <hr/>" . $_POST["name"]. "<br/>";
         $emailfile = $_POST["email"]. "<br/><br/>";
-        $messagefile = $_POST["message"]. "<br/><hr/>";
+        $messagefile = $_POST["message"]. "<br/>";
+        $deletebutton = "<button id='delbtn'>Poista</button>". "<hr/></div>";
         fwrite ($myfile, $namefile);
         fwrite ($myfile, $emailfile);
         fwrite ($myfile, $messagefile);
+        fwrite ($myfile, $deletebutton);
         fclose($myfile);
 
         include("comments.php");
