@@ -2,7 +2,7 @@ let guestName = document.getElementById("name");
 let guestEmail = document.getElementById("email");
 let passWord = document.getElementById("password");
 let deleteBtn = document.getElementById("delbtn");
-let parenDiv = document.getElementById("parent");
+let parentDiv = document.getElementById("parent");
 
 function validateMessage(form) {
     if (guestName.value == null || guestName.value == "") {
@@ -33,6 +33,6 @@ function validatePassword(form) {
 }
 
 deleteBtn.addEventListener("click", function () {
-    parentDiv.removeChild(this);
     console.log(test);
+    parentDiv.removeChild(this);
 });
