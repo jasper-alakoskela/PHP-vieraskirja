@@ -10,31 +10,27 @@
 
 <body>
     <h1>Vieraskirja</h1>
-
-    <form action="addcomment.php" method="POST" onsubmit="return validateMessage(this);">
+    <form action="addcomment.php" method="POST">
         <label for="name">Nimi</label>
         <br><br>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name">
+        <?php if(isset($error)) { ?> 
+            <p><?php echo $error ?></p>
+        <?php } ?>
         <br><br>
         <label for="email">Sähköposti</label>
         <br><br>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email">
+        <?php if(isset($error)) { ?> 
+            <p><?php echo $error ?></p>
+        <?php } ?>
         <br><br>
         <label for="message">Viesti</label>
         <br><br>
-        <textarea name="message" cols="40" rows="7"></textarea>
+        <textarea name="message" cols="30" rows="5"></textarea>
         <br>
         <input type="submit" value="Tallenna">
+        
     </form>
-        <br><br>
-    <div>
-        <h2>Hallintapaneeli</h2>
-            <form action="comments.php" method="POST" onsubmit="return validatePassword(this);">
-                <input placeholder="Salasana" type="password" id="password" name="password">
-                <input type="submit" value="Kirjaudu"> 
-            </form>
-        </div>
-    <script src="app.js"></script>
 </body>
-
 </html>

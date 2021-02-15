@@ -1,3 +1,14 @@
+<?php
+    /*
+    if(empty($_POST["password"])) {
+        $password_error = "Väärä salasana!";
+    }
+    if($_POST["password"] != 0000) {
+        $password_error = "Väärä salasana!";
+    }
+    else {
+        return true;
+    }
 
-<div id='parent'> <hr/>marko laidinen<br/>miukumauku@gmail.com<br/><br/>moi<br/><button id='delbtn'>Poista</button><hr/></div>
-<script src="app.js"></script>
+    include("controlpanel.php");
+    */?> <hr/>jooseppi härkämies<br/>miukumauku@gmail.com<br/><br/>moi<br/><hr/> <hr/>jooseppi härkämies<br/>miukumauku@gmail.com<br/><br/>moi<br/><hr/>
