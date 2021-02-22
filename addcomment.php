@@ -7,13 +7,12 @@
     <title>Vieraskirja</title>
 </head>
 <body>
-    <H1>Vierailijat</H1>
 <?php
     $name = $_POST["name"];
     $email = $_POST["email"];
     $message = $_POST["message"];
 
-    if(empty($_POST["name"]) or empty($_POST["email"])) {
+    if(empty($name) or empty($email)) {
         $error = "Nimi tai Sähköposti puuttuu!";
         include("index.php");
     }
@@ -23,14 +22,16 @@
         $file = fopen("comments.csv", "a");
         fputcsv($file, $form);
         fclose($file);
-        include("comments.csv"); 
+         require_once("functions.php");
+         commentStyle();
     }
     
     else {
-        include("comments.csv"); 
+        require_once("functions.php");
+        commentStyle();
     }
-
 ?>
+
 </body>
 </html>
 
