@@ -7,12 +7,20 @@ function commentStyle() {
             echo "<p>$data[1]</p>";
             echo "<p>$data[2]</p>";
         }
+            
     }
 }
-    /*function delete() {
+
+    function delete() {
         $comments = file_get_contents("comments.csv");
-        explode("\n", $comments);
+        if (($file = fopen("comments.csv", "r")) !== FALSE) {
+            while(($comments = fgetcsv($file, 1000, "\n")) !== FALSE){
         array_splice($comments, 1);
         implode("\n", $comments);
-        file_put_contents("comments.csv", $comments);*/
+        file_put_contents("comments.csv", $comments);
+
+        }
+    } 
+}
+//echo '<button>Poista</button>';
 ?>

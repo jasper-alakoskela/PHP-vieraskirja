@@ -24,14 +24,21 @@
         fclose($file);
          require_once("functions.php");
          commentStyle();
-    }
+}
     
     else {
         require_once("functions.php");
         commentStyle();
     }
 ?>
-
+    <input type="button" name="deletebtn" value="Poista">
+        <?php /*
+         if ($_POST) {
+            if (isset($_POST["deletebtn"])) {
+                delete();
+        } 
+    }
+     nappi toimintaan!   */?>
 </body>
 </html>
 

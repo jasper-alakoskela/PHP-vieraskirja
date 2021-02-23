@@ -30,7 +30,6 @@
         <textarea name="message" cols="30" rows="5"></textarea>
         <br>
         <input type="submit" value="Tallenna">
-        
     </form>
 </body>
 </html>
