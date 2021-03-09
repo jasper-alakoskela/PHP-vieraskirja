@@ -47,13 +47,6 @@
         require_once("functions.php");
         commentStyle();
     }
-        
-    if ($_POST) {
-        if (isset($_POST["deletebtn"])) {
-            require_once("functions.php");
-            delete();
-        } 
-    }
         ?>
     </form>
     
