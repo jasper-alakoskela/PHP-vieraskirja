@@ -10,3 +10,7 @@ function commentStyle() {
         }
     }
 }
+
+function delete() {
+    
+}
