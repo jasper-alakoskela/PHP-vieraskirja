@@ -10,7 +10,7 @@
 
 <body>
     <h1>Vieraskirja</h1>
-    <form action="#" method="POST">
+    <form action="index.php" method="POST">
         <label for="name">Nimi</label>
         <br><br>
         <input type="text" name="name">
@@ -24,31 +24,24 @@
         <textarea name="message" cols="30" rows="5"></textarea>
         <br>
         <input type="submit" value="Tallenna">
+        </form>
         <br><br>
-        <?php if(empty($_POST["name"]) or empty($_POST["email"])) {
-        echo "Nimi tai Sähköposti puuttuu!";
-        require_once("functions.php");
-         commentStyle();
-    }?>
-    <hr>
-    <h1>Vierailijat</h1>
-    <?php
-
-    if (isset($_POST["name"]) || isset($_POST["email"]) || isset($_POST["message"])){
-        $form = [$_POST["name"], $_POST["email"], $_POST["message"]];
-        $file = fopen("comments.csv", "a");
-        fputcsv($file, $form);
-        fclose($file);
-         require_once("functions.php");
-         commentStyle();
-    }
-    
-    else {
-        require_once("functions.php");
-        commentStyle();
-    }
-        ?>
-    </form>
-    
+        <hr><h1>Vierailijat</h1>
+        <?php 
+        
+        if(empty($_POST["name"]) or empty($_POST["email"])) {
+            echo "Nimi tai Sähköposti puuttuu!";
+            return false;
+         }
+        
+         else {
+            $form = [$_POST["name"], $_POST["email"], $_POST["message"]];
+            $file = fopen("comments.csv", "a");
+            fputcsv($file, $form);
+            fclose($file);
+             require_once("functions.php");
+             commentStyle();
+         } ?>
+         
 </body>
 </html>

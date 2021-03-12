@@ -6,7 +6,7 @@ function commentStyle() {
             echo "<h3>$data[0]</h3>";
             echo "<p>$data[1]</p>";
             echo "<p>$data[2]</p>";
-            echo '<a href="delete.php?lineNum=$i\">Poista</a>';
+            echo '<a href="">Poista</a>';
         }
     }
 }
