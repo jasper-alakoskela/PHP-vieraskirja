@@ -10,6 +10,20 @@
 
 <body>
     <h1>Vieraskirja</h1>
+    <?php 
+    if(empty($_POST["name"]) or empty($_POST["email"])) {
+            echo "Nimi tai Sähköposti puuttuu!";  
+         }
+         else {
+            $message = str_replace(PHP_EOL, "<br>", $_POST["message"]);
+
+            $form = [$_POST["name"], $_POST["email"], $message];
+            $file = fopen("comments.csv", "a");
+            fputcsv($file, $form);
+            fclose($file);
+         }
+         ?>
+
     <form action="index.php" method="POST">
         <label for="name">Nimi</label>
         <br><br>
@@ -23,25 +37,13 @@
         <br><br>
         <textarea name="message" cols="30" rows="5"></textarea>
         <br>
-        <input type="submit" value="Tallenna">
+        <input type="submit">
         </form>
         <br><br>
         <hr><h1>Vierailijat</h1>
-        <?php 
-        
-        if(empty($_POST["name"]) or empty($_POST["email"])) {
-            echo "Nimi tai Sähköposti puuttuu!";
-            return false;
-         }
-        
-         else {
-            $form = [$_POST["name"], $_POST["email"], $_POST["message"]];
-            $file = fopen("comments.csv", "a");
-            fputcsv($file, $form);
-            fclose($file);
-             require_once("functions.php");
-             commentStyle();
-         } ?>
-         
+        <?php  
+        require_once("functions.php");
+         commentStyle(); 
+        ?>
 </body>
 </html>
