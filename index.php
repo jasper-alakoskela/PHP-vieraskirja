@@ -11,17 +11,20 @@
 <body>
     <h1>Vieraskirja</h1>
     <?php 
-    if(empty($_POST["name"]) or empty($_POST["email"])) {
+    if(isset($_POST["submit"])) {
+
+        if(empty($_POST["name"]) or empty($_POST["email"])) {
             echo "Nimi tai Sähköposti puuttuu!";  
          }
+
          else {
             $message = str_replace(PHP_EOL, "<br>", $_POST["message"]);
-
             $form = [$_POST["name"], $_POST["email"], $message];
             $file = fopen("comments.csv", "a");
             fputcsv($file, $form);
             fclose($file);
          }
+     }
          ?>
 
     <form action="index.php" method="POST">
@@ -37,7 +40,7 @@
         <br><br>
         <textarea name="message" cols="30" rows="5"></textarea>
         <br>
-        <input type="submit">
+        <input type="submit" name="submit">
         </form>
         <br><br>
         <hr><h1>Vierailijat</h1>
